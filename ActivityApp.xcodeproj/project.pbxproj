@@ -15,6 +15,12 @@
 		5A4BE6DD27D53032009F3367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A4BE6DB27D53032009F3367 /* LaunchScreen.storyboard */; };
 		5A4BE6E627D5335A009F3367 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 5A4BE6E527D5335A009F3367 /* Realm */; };
 		5A4BE6E827D5335A009F3367 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A4BE6E727D5335A009F3367 /* RealmSwift */; };
+		5A4BE6EC27D534CA009F3367 /* Contracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BE6EB27D534CA009F3367 /* Contracts.swift */; };
+		5A4BE6EE27D534D3009F3367 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BE6ED27D534D3009F3367 /* Models.swift */; };
+		5A4BE6F027D534DC009F3367 /* Builders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BE6EF27D534DC009F3367 /* Builders.swift */; };
+		5A4BE6F227D534E3009F3367 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BE6F127D534E3009F3367 /* Enums.swift */; };
+		5A4BE6F427D53E25009F3367 /* BaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BE6F327D53E25009F3367 /* BaseModels.swift */; };
+		5A4BE6F627D53E2E009F3367 /* Managers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BE6F527D53E2E009F3367 /* Managers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,12 @@
 		5A4BE6D927D53032009F3367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A4BE6DC27D53032009F3367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A4BE6DE27D53032009F3367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A4BE6EB27D534CA009F3367 /* Contracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contracts.swift; sourceTree = "<group>"; };
+		5A4BE6ED27D534D3009F3367 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5A4BE6EF27D534DC009F3367 /* Builders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builders.swift; sourceTree = "<group>"; };
+		5A4BE6F127D534E3009F3367 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		5A4BE6F327D53E25009F3367 /* BaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModels.swift; sourceTree = "<group>"; };
+		5A4BE6F527D53E2E009F3367 /* Managers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,7 @@
 		5A4BE6CF27D53031009F3367 /* ActivityApp */ = {
 			isa = PBXGroup;
 			children = (
+				5A4BE6E927D534AC009F3367 /* Core */,
 				5A4BE6D027D53031009F3367 /* AppDelegate.swift */,
 				5A4BE6D227D53031009F3367 /* SceneDelegate.swift */,
 				5A4BE6D427D53031009F3367 /* ViewController.swift */,
@@ -69,6 +82,27 @@
 				5A4BE6DE27D53032009F3367 /* Info.plist */,
 			);
 			path = ActivityApp;
+			sourceTree = "<group>";
+		};
+		5A4BE6E927D534AC009F3367 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5A4BE6EA27D534B6009F3367 /* Validators */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5A4BE6EA27D534B6009F3367 /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				5A4BE6EB27D534CA009F3367 /* Contracts.swift */,
+				5A4BE6ED27D534D3009F3367 /* Models.swift */,
+				5A4BE6EF27D534DC009F3367 /* Builders.swift */,
+				5A4BE6F127D534E3009F3367 /* Enums.swift */,
+				5A4BE6F327D53E25009F3367 /* BaseModels.swift */,
+				5A4BE6F527D53E2E009F3367 /* Managers.swift */,
+			);
+			path = Validators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +185,13 @@
 			files = (
 				5A4BE6D527D53031009F3367 /* ViewController.swift in Sources */,
 				5A4BE6D127D53031009F3367 /* AppDelegate.swift in Sources */,
+				5A4BE6F627D53E2E009F3367 /* Managers.swift in Sources */,
+				5A4BE6F427D53E25009F3367 /* BaseModels.swift in Sources */,
 				5A4BE6D327D53031009F3367 /* SceneDelegate.swift in Sources */,
+				5A4BE6EC27D534CA009F3367 /* Contracts.swift in Sources */,
+				5A4BE6F227D534E3009F3367 /* Enums.swift in Sources */,
+				5A4BE6EE27D534D3009F3367 /* Models.swift in Sources */,
+				5A4BE6F027D534DC009F3367 /* Builders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
