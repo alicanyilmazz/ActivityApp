@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5A4BE6D127D53031009F3367 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BE6D027D53031009F3367 /* AppDelegate.swift */; };
 		5A4BE6D327D53031009F3367 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BE6D227D53031009F3367 /* SceneDelegate.swift */; };
-		5A4BE6D527D53031009F3367 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BE6D427D53031009F3367 /* ViewController.swift */; };
 		5A4BE6D827D53031009F3367 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A4BE6D627D53031009F3367 /* Main.storyboard */; };
 		5A4BE6DA27D53032009F3367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A4BE6D927D53032009F3367 /* Assets.xcassets */; };
 		5A4BE6DD27D53032009F3367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A4BE6DB27D53032009F3367 /* LaunchScreen.storyboard */; };
@@ -21,13 +20,14 @@
 		5A4BE6F227D534E3009F3367 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BE6F127D534E3009F3367 /* Enums.swift */; };
 		5A4BE6F427D53E25009F3367 /* BaseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BE6F327D53E25009F3367 /* BaseModels.swift */; };
 		5A4BE6F627D53E2E009F3367 /* Managers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BE6F527D53E2E009F3367 /* Managers.swift */; };
+		5A4BE6F827D5426F009F3367 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BE6F727D5426F009F3367 /* CustomAlertViewController.swift */; };
+		5A4BE6FA27D54CE1009F3367 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4BE6F927D54CE1009F3367 /* BaseTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5A4BE6CD27D53031009F3367 /* ActivityApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4BE6D027D53031009F3367 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A4BE6D227D53031009F3367 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5A4BE6D427D53031009F3367 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A4BE6D727D53031009F3367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A4BE6D927D53032009F3367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A4BE6DC27D53032009F3367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +38,8 @@
 		5A4BE6F127D534E3009F3367 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		5A4BE6F327D53E25009F3367 /* BaseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModels.swift; sourceTree = "<group>"; };
 		5A4BE6F527D53E2E009F3367 /* Managers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Managers.swift; sourceTree = "<group>"; };
+		5A4BE6F727D5426F009F3367 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		5A4BE6F927D54CE1009F3367 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +77,8 @@
 				5A4BE6E927D534AC009F3367 /* Core */,
 				5A4BE6D027D53031009F3367 /* AppDelegate.swift */,
 				5A4BE6D227D53031009F3367 /* SceneDelegate.swift */,
-				5A4BE6D427D53031009F3367 /* ViewController.swift */,
+				5A4BE6F927D54CE1009F3367 /* BaseTableViewController.swift */,
+				5A4BE6F727D5426F009F3367 /* CustomAlertViewController.swift */,
 				5A4BE6D627D53031009F3367 /* Main.storyboard */,
 				5A4BE6D927D53032009F3367 /* Assets.xcassets */,
 				5A4BE6DB27D53032009F3367 /* LaunchScreen.storyboard */,
@@ -183,12 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A4BE6D527D53031009F3367 /* ViewController.swift in Sources */,
 				5A4BE6D127D53031009F3367 /* AppDelegate.swift in Sources */,
 				5A4BE6F627D53E2E009F3367 /* Managers.swift in Sources */,
+				5A4BE6FA27D54CE1009F3367 /* BaseTableViewController.swift in Sources */,
 				5A4BE6F427D53E25009F3367 /* BaseModels.swift in Sources */,
 				5A4BE6D327D53031009F3367 /* SceneDelegate.swift in Sources */,
 				5A4BE6EC27D534CA009F3367 /* Contracts.swift in Sources */,
+				5A4BE6F827D5426F009F3367 /* CustomAlertViewController.swift in Sources */,
 				5A4BE6F227D534E3009F3367 /* Enums.swift in Sources */,
 				5A4BE6EE27D534D3009F3367 /* Models.swift in Sources */,
 				5A4BE6F027D534DC009F3367 /* Builders.swift in Sources */,
