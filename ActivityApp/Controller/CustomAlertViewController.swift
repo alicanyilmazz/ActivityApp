@@ -101,8 +101,8 @@ extension CustomAlertViewController{
         let result = validationComponentBuilder.isEverythingValid(sectionName: SectionName.activity)
         if result{
             delegate?.okButtonTapped(data: text)
-            self.dismiss(animated: true, completion: nil)
         }
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelBtnClicked(_ sender: UIButton) {
