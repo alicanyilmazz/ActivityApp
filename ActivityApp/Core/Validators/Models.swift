@@ -8,13 +8,13 @@
 import Foundation
 
 final class UITextFieldComponent : UIComponent{
-    override init(componentType: ComponentType, validations: [ValidatorManager] = []) {
+    override init(componentType: Int, validations: [ValidatorManager] = []) {
         super.init(componentType: componentType, validations: validations)
     }
 }
 
 final class UIDateComponent : UIComponent{
-    override init(componentType: ComponentType, validations: [ValidatorManager] = []) {
+    override init(componentType: Int, validations: [ValidatorManager] = []) {
         super.init(componentType: componentType, validations: validations)
     }
 }
