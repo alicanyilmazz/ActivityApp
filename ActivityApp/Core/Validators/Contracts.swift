@@ -9,14 +9,14 @@ import Foundation
 
 protocol ValidationComponentBuilderProtocol{
     var content : [UISectionComponent] {get}
-    func isValid(sectionName : SectionName ,componentType : ComponentType) -> (error : Bool , message : String)
-    func isEverythingValid(sectionName : SectionName) -> Bool
-    func update(val: Any , sectionName : SectionName , componentType : ComponentType)
+    func isValid(sectionName : Int ,componentType : Int) -> (error : Bool , message : String)
+    func isEverythingValid(sectionName : Int) -> Bool
+    func update(val: Any , sectionName : Int , componentType : Int)
 }
 
 protocol UIComponentProtocol{
     var id: UUID {get}
-    var componentType: ComponentType {get}
+    var componentType: Int {get}
     var validations: [ValidatorManager] {get}
 }
 
