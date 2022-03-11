@@ -9,7 +9,7 @@ import Foundation
 
 class UIComponent : UIComponentProtocol,Hashable{
     let id: UUID = UUID()
-    let componentType: ComponentType
+    let componentType: Int
     var value: Any?
     var validations: [ValidatorManager]
     
@@ -21,7 +21,7 @@ class UIComponent : UIComponentProtocol,Hashable{
             lhs.id == rhs.id
     }
     
-    init(componentType : ComponentType , validations: [ValidatorManager] = []){
+    init(componentType : Int , validations: [ValidatorManager] = []){
         self.componentType = componentType
         self.validations = validations
     }
