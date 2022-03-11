@@ -57,7 +57,7 @@ extension CustomAlertViewController{
     }
     
     fileprivate func setComponents() {
-        activitiesTextField = UITextFieldComponent(componentType: .activityName, validations: validationComponentBuilder.content[SectionName.activity.rawValue].components[ComponentType.activityName.rawValue].validations)
+        activitiesTextField = UITextFieldComponent(componentType: ComponentType.activitySection.activityName, validations: validationComponentBuilder.content[SectionName.activity].components[ComponentType.activitySection.activityName].validations)
         if let text = firstTextField.text{
             activitiesTextField.value = text
         }
@@ -87,8 +87,8 @@ extension CustomAlertViewController{
 extension CustomAlertViewController : UITextFieldDelegate{
     @IBAction func firstTextFieldEditing(_ sender: UITextField) {
         guard let text = firstTextField.text else { return }
-        validationComponentBuilder.update(val: text, sectionName: SectionName.activity, componentType: ComponentType.activityName)
-        let result = validationComponentBuilder.isValid(sectionName: SectionName.activity, componentType: ComponentType.activityName)
+        validationComponentBuilder.update(val: text, sectionName: SectionName.activity, componentType: ComponentType.activitySection.activityName)
+        let result = validationComponentBuilder.isValid(sectionName: SectionName.activity, componentType: ComponentType.activitySection.activityName)
         setUIValidation(result)
     }
     
@@ -101,8 +101,8 @@ extension CustomAlertViewController{
         let result = validationComponentBuilder.isEverythingValid(sectionName: SectionName.activity)
         if result{
             delegate?.okButtonTapped(data: text)
+            self.dismiss(animated: true, completion: nil)
         }
-        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelBtnClicked(_ sender: UIButton) {
