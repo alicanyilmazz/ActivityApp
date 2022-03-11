@@ -11,21 +11,55 @@ final class ValidationComponentBuilder : ValidationComponentBuilderProtocol {
 
    private(set) var content = [
     UISectionComponent(components: [
-       UITextFieldComponent(componentType: .activityName,validations: [
+        UITextFieldComponent(componentType: ComponentType.activitySection.activityName,validations: [
            RegexValidatorManager([
                RegexModel(pattern: RegexValidationPatterns.alphabetic, error: .custom(message: "you must be only enter string.")),
                RegexModel(pattern: RegexValidationPatterns.between3to15, error: .custom(message: "you can enter between 3 to 25."))
            ])])
+        ]),
+    UISectionComponent(components: [
+        UITextFieldComponent(componentType: ComponentType.paymentSection.payerName,validations: [
+           RegexValidatorManager([
+               RegexModel(pattern: RegexValidationPatterns.alphabetic, error: .custom(message: "you must be only enter string.")),
+               RegexModel(pattern: RegexValidationPatterns.between3to15, error: .custom(message: "you can enter between 3 to 25."))
+           ])]),
+        UITextFieldComponent(componentType: ComponentType.paymentSection.explanation,validations: [
+           RegexValidatorManager([
+               RegexModel(pattern: RegexValidationPatterns.alphabetic, error: .custom(message: "you must be only enter string.")),
+               RegexModel(pattern: RegexValidationPatterns.between3to15, error: .custom(message: "you can enter between 3 to 25."))
+           ])]),
+        UITextFieldComponent(componentType: ComponentType.paymentSection.cost,validations: [
+           RegexValidatorManager([
+            RegexModel(pattern: RegexValidationPatterns.onlyNumber, error: .custom(message: "you must be only enter numbers.")),
+            RegexModel(pattern: RegexValidationPatterns.between1to6, error: .custom(message: "you can enter between 1 to 6."))
+           ])])
+        ]),
+    UISectionComponent(components: [
+        UITextFieldComponent(componentType: ComponentType.editSection.payerName,validations: [
+           RegexValidatorManager([
+               RegexModel(pattern: RegexValidationPatterns.alphabetic, error: .custom(message: "you must be only enter string.")),
+               RegexModel(pattern: RegexValidationPatterns.between3to15, error: .custom(message: "you can enter between 3 to 25."))
+           ])]),
+        UITextFieldComponent(componentType: ComponentType.editSection.explanation,validations: [
+           RegexValidatorManager([
+               RegexModel(pattern: RegexValidationPatterns.alphabetic, error: .custom(message: "you must be only enter string.")),
+               RegexModel(pattern: RegexValidationPatterns.between3to15, error: .custom(message: "you can enter between 3 to 25."))
+           ])]),
+        UITextFieldComponent(componentType: ComponentType.editSection.cost,validations: [
+           RegexValidatorManager([
+            RegexModel(pattern: RegexValidationPatterns.onlyNumber, error: .custom(message: "you must be only enter numbers.")),
+            RegexModel(pattern: RegexValidationPatterns.between1to6, error: .custom(message: "you can enter between 1 to 6."))
+           ])])
         ])
      ]
    
-    func update(val: Any ,sectionName : SectionName ,componentType : ComponentType){
-        content[sectionName.rawValue].components[componentType.rawValue].value = val
+    func update(val: Any ,sectionName : Int ,componentType : Int){
+        content[sectionName].components[componentType].value = val
    }
     
-    func isValid(sectionName : SectionName ,componentType : ComponentType) -> (error : Bool , message : String){
+    func isValid(sectionName : Int ,componentType : Int) -> (error : Bool , message : String){
        do {
-           let component = content[sectionName.rawValue].components[componentType.rawValue]
+           let component = content[sectionName].components[componentType]
            for validator in component.validations{
                try validator.validate(component.value as Any)
            }
@@ -41,9 +75,9 @@ final class ValidationComponentBuilder : ValidationComponentBuilderProtocol {
        }
    }
    
-    func isEverythingValid(sectionName : SectionName) -> Bool{
+    func isEverythingValid(sectionName : Int) -> Bool{
        do {
-           let components = content[sectionName.rawValue].components
+           let components = content[sectionName].components
            for component in components {
                for validator in component.validations{
                    try validator.validate(component.value as Any)
