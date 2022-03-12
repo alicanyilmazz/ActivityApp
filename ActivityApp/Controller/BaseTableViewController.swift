@@ -49,7 +49,7 @@ class BaseTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goDetail", sender: self)
+        //performSegue(withIdentifier: "goDetail", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -63,21 +63,21 @@ class BaseTableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        cell.textLabel?.text = activities?[indexPath.row].name ?? "activity not found."
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! BaseTableViewCell  //UITableViewCell(style: .default, reuseIdentifier: "Cell") as! BaseTableViewCell
+        //cell.textLabel?.text = activities?[indexPath.row].name ?? "activity not found."
         
         let sumOfPayments : Int = activities?[indexPath.row].peyments.sum(ofProperty: "balance") ?? 0
         
         if let name = activities?[indexPath.row].name{
-            cell.textLabel?.text = "\(name) - \(sumOfPayments)"
+            //cell.textLabel?.text = "\(name) - \(sumOfPayments)"
+            cell.setAttributes(activityName: name, price: "\(sumOfPayments)")
         }else{
-            cell.textLabel?.text = "Activity not found."
+            cell.setAttributes(activityName: "No Activity", price: "0")
         }
         
         if activities?[indexPath.row].isCompleted ?? false{
-            cell.accessoryType = .checkmark
-        }else{
-            cell.accessoryType = .none
+            cell.backgroundColor = .lightGray
+            cell.textLabel?.textColor = .darkGray
         }
         return cell
     }
@@ -86,6 +86,7 @@ class BaseTableViewController: UITableViewController{
         return true
     }
     
+    /*
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             if let deletedActivity = activities?[indexPath.row]{
@@ -100,6 +101,85 @@ class BaseTableViewController: UITableViewController{
             }
         }
         tableView.reloadData()
+    }
+    */
+    
+    /*
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: UITableViewRowAction.Style.default, title: "") { action, indexpath in
+            if let deletedActivity = self.activities?[indexPath.row]{
+                do {
+                    try self.realm.write({
+                        self.realm.delete(deletedActivity.peyments)
+                        self.realm.delete(deletedActivity)
+                    })
+                } catch {
+                    print("Could not deleted : \(error.localizedDescription)")
+                }
+            }
+            tableView.reloadData()
+        }
+        
+        delete.backgroundColor = .systemPink
+        
+        let balance = UITableViewRowAction(style: UITableViewRowAction.Style.normal, title: "") { action, indexpath in
+            if let activite = self.activities?[indexPath.row] {
+                do {
+                    try self.realm.write({
+                        activite.isCompleted = true
+                    })
+                } catch {
+                    print("opps balance error : \(error.localizedDescription)")
+                }
+            }
+        }
+        
+        balance.backgroundColor = .yellow
+        
+        return [delete,balance]
+    }
+    */
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?{
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, completionHandler in
+            if let deletedActivity = self.activities?[indexPath.row]{
+                do {
+                    try self.realm.write({
+                        self.realm.delete(deletedActivity.peyments)
+                        self.realm.delete(deletedActivity)
+                    })
+                } catch {
+                    print("Could not deleted : \(error.localizedDescription)")
+                }
+            }
+            completionHandler(true)
+            tableView.reloadData()
+        }
+        
+        deleteAction.image = UIImage(systemName: "trash")
+        deleteAction.backgroundColor = .systemPink
+        
+        let balanceAction = UIContextualAction(style: .destructive, title: nil) { _, _, completionHandler in
+            if let activite = self.activities?[indexPath.row] {
+                do {
+                    try self.realm.write({
+                        activite.isCompleted = true
+                    })
+                } catch {
+                    print("opps balance error : \(error.localizedDescription)")
+                }
+            }
+            completionHandler(true)
+            tableView.reloadData()
+        }
+        
+        balanceAction.image = UIImage(systemName: "pencil")
+        balanceAction.backgroundColor = .lightGray
+        
+        
+        
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction,balanceAction])
+        return configuration
     }
 }
 
