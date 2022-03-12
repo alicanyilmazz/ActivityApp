@@ -75,9 +75,10 @@ class BaseTableViewController: UITableViewController{
             cell.setAttributes(activityName: "No Activity", price: "0")
         }
         
-        if activities?[indexPath.row].isCompleted ?? false{
-            cell.backgroundColor = .lightGray
-            cell.textLabel?.textColor = .darkGray
+        if activities?[indexPath.row].isCompleted == false{
+            cell.setUIFeatures(status: true)
+        }else{
+            cell.setUIFeatures(status: false)
         }
         return cell
     }
@@ -175,8 +176,6 @@ class BaseTableViewController: UITableViewController{
         
         balanceAction.image = UIImage(systemName: "pencil")
         balanceAction.backgroundColor = .lightGray
-        
-        
         
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction,balanceAction])
         return configuration
