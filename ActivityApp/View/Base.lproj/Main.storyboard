@@ -22,14 +22,87 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="lE2-A1-gSB">
-                                <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="lE2-A1-gSB" customClass="BaseTableViewCell" customModule="ActivityApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lE2-A1-gSB" id="uWK-bO-TGp">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gST-aF-UTl">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOp-Zb-QDj">
+                                                    <rect key="frame" x="8" y="8" width="398" height="44"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g1T-Wr-jbg">
+                                                            <rect key="frame" x="8" y="8" width="382" height="28"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.hexagongrid" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Xo1-fy-RYg">
+                                                                    <rect key="frame" x="0.0" y="1" width="23" height="26.5"/>
+                                                                    <color key="tintColor" systemColor="tintColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="23" id="SLW-Ya-PL7"/>
+                                                                        <constraint firstAttribute="height" constant="23" id="a16-aC-4vu"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlc-6F-z2k">
+                                                                    <rect key="frame" x="33" y="0.0" width="256" height="28"/>
+                                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="15"/>
+                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1324" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZF-TT-G5E">
+                                                                    <rect key="frame" x="299" y="0.0" width="50" height="28"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="50" id="vCt-Sb-cuq"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
+                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollar" translatesAutoresizingMaskIntoConstraints="NO" id="JFi-eU-qNF">
+                                                                    <rect key="frame" x="359" y="0.0" width="23" height="28"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="23" id="fjq-lT-ebF"/>
+                                                                        <constraint firstAttribute="width" constant="23" id="gGT-0K-vY9"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="g1T-Wr-jbg" secondAttribute="trailing" constant="8" id="1XD-hO-IQk"/>
+                                                        <constraint firstAttribute="bottom" secondItem="g1T-Wr-jbg" secondAttribute="bottom" constant="8" id="7jf-57-Qrw"/>
+                                                        <constraint firstItem="g1T-Wr-jbg" firstAttribute="leading" secondItem="sOp-Zb-QDj" secondAttribute="leading" constant="8" id="Cbj-Ym-1sJ"/>
+                                                        <constraint firstItem="g1T-Wr-jbg" firstAttribute="top" secondItem="sOp-Zb-QDj" secondAttribute="top" constant="8" id="OEX-Ko-MtT"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="sOp-Zb-QDj" secondAttribute="trailing" constant="8" id="e3x-aQ-8em"/>
+                                                <constraint firstAttribute="bottom" secondItem="sOp-Zb-QDj" secondAttribute="bottom" constant="8" id="mfO-uM-EQU"/>
+                                                <constraint firstItem="sOp-Zb-QDj" firstAttribute="top" secondItem="gST-aF-UTl" secondAttribute="top" constant="8" id="tYj-x5-0xS"/>
+                                                <constraint firstItem="sOp-Zb-QDj" firstAttribute="leading" secondItem="gST-aF-UTl" secondAttribute="leading" constant="8" id="yGe-fQ-kpp"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="gST-aF-UTl" secondAttribute="trailing" id="3gp-uj-cQA"/>
+                                        <constraint firstItem="gST-aF-UTl" firstAttribute="top" secondItem="uWK-bO-TGp" secondAttribute="top" id="NwJ-Er-D2e"/>
+                                        <constraint firstItem="gST-aF-UTl" firstAttribute="leading" secondItem="uWK-bO-TGp" secondAttribute="leading" id="eeE-bg-8lh"/>
+                                        <constraint firstAttribute="bottom" secondItem="gST-aF-UTl" secondAttribute="bottom" id="yFQ-db-tlw"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="cellLbl" destination="zlc-6F-z2k" id="i2X-xT-fQC"/>
+                                    <outlet property="cellLeftIcon" destination="Xo1-fy-RYg" id="ah6-mD-Ai0"/>
+                                    <outlet property="cellLeftLbl" destination="bZF-TT-G5E" id="ZlE-bf-1Qi"/>
+                                    <outlet property="cellRightIcon" destination="JFi-eU-qNF" id="IbB-NK-fRk"/>
+                                    <outlet property="eachView" destination="sOp-Zb-QDj" id="plc-aY-wqW"/>
+                                    <outlet property="outsideView" destination="gST-aF-UTl" id="VmK-uo-Ndk"/>
                                     <segue destination="ow2-L1-D7J" kind="show" identifier="goDetail" id="yHG-pb-Ezp"/>
                                 </connections>
                             </tableViewCell>
@@ -71,7 +144,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="IwS-eW-ORT"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="16"/>
                                         <color key="textColor" red="0.92549019610000005" green="0.36862745099999999" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -99,7 +172,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="34" id="QnG-cZ-e4v"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <connections>
                                                                             <action selector="firstTextFieldChanged:" destination="J7g-sx-QZC" eventType="editingChanged" id="g1f-4j-4Qp"/>
@@ -119,7 +192,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="4J7-tN-Pyq"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="11"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -167,7 +240,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="34" id="fc6-Xe-POy"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <connections>
                                                                             <action selector="secondTextFieldChanged:" destination="J7g-sx-QZC" eventType="editingChanged" id="dPb-Gg-knp"/>
@@ -187,7 +260,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="ecE-lF-5Dx"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="11"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -236,7 +309,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="34" id="fsF-BP-z7W"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <connections>
                                                                             <action selector="thirdTextFieldChanged:" destination="J7g-sx-QZC" eventType="editingChanged" id="YDl-4p-CFH"/>
@@ -256,7 +329,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="21" id="3WP-i8-jHI"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="11"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -305,13 +378,13 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="100" id="Cnv-t3-HOJ"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="11"/>
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3A-FK-h2v">
                                                                         <rect key="frame" x="130" y="0.0" width="224" height="34"/>
-                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="11"/>
                                                                         <color key="textColor" red="0.92549019610000005" green="0.36862745099999999" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -333,13 +406,13 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="100" id="QId-0t-Zu0"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="11"/>
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcU-jg-ioW">
                                                                         <rect key="frame" x="130" y="0.0" width="224" height="34"/>
-                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="11"/>
                                                                         <color key="textColor" red="0.92549019610000005" green="0.36862745099999999" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -372,8 +445,9 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edv-Zg-v3Q">
-                                <rect key="frame" x="20" y="587" width="374" height="30"/>
+                                <rect key="frame" x="20" y="587" width="374" height="35"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.36865374449999999" blue="0.37059289220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="save"/>
@@ -432,13 +506,87 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Act-LP-EmP">
-                                <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="60" id="Act-LP-EmP" customClass="ChildTableViewCell" customModule="ActivityApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Act-LP-EmP" id="mv2-ao-fRr">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keh-J6-dpm">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWF-YZ-Ugy">
+                                                    <rect key="frame" x="8" y="8" width="398" height="44"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bDb-Jo-xyt">
+                                                            <rect key="frame" x="8" y="8" width="382" height="28"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circles.hexagongrid" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OQA-c8-KnP">
+                                                                    <rect key="frame" x="0.0" y="1" width="23" height="26.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="23" id="Cey-Gg-j0Y"/>
+                                                                        <constraint firstAttribute="height" constant="23" id="K7h-c0-ddT"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="262" translatesAutoresizingMaskIntoConstraints="NO" id="mNV-kg-f39">
+                                                                    <rect key="frame" x="28" y="0.0" width="271" height="28"/>
+                                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Z0-6G-r8o">
+                                                                    <rect key="frame" x="304" y="0.0" width="50" height="28"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="50" id="DpL-Xd-h5i"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollar" translatesAutoresizingMaskIntoConstraints="NO" id="hfo-mS-ykD">
+                                                                    <rect key="frame" x="359" y="0.0" width="23" height="28"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="23" id="11y-j2-eWP"/>
+                                                                        <constraint firstAttribute="height" constant="23" id="u2W-ai-PKI"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="bDb-Jo-xyt" firstAttribute="top" secondItem="PWF-YZ-Ugy" secondAttribute="top" constant="8" id="U4L-eb-Ybv"/>
+                                                        <constraint firstItem="bDb-Jo-xyt" firstAttribute="leading" secondItem="PWF-YZ-Ugy" secondAttribute="leading" constant="8" id="dDC-9I-I5E"/>
+                                                        <constraint firstAttribute="bottom" secondItem="bDb-Jo-xyt" secondAttribute="bottom" constant="8" id="dLO-Z7-v5p"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bDb-Jo-xyt" secondAttribute="trailing" constant="8" id="oQ0-BQ-ri2"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="PWF-YZ-Ugy" firstAttribute="top" secondItem="keh-J6-dpm" secondAttribute="top" constant="8" id="6ed-9w-h4d"/>
+                                                <constraint firstAttribute="trailing" secondItem="PWF-YZ-Ugy" secondAttribute="trailing" constant="8" id="Dg5-6Q-Pk3"/>
+                                                <constraint firstAttribute="bottom" secondItem="PWF-YZ-Ugy" secondAttribute="bottom" constant="8" id="ITO-E3-I3c"/>
+                                                <constraint firstItem="PWF-YZ-Ugy" firstAttribute="leading" secondItem="keh-J6-dpm" secondAttribute="leading" constant="8" id="ffu-OQ-Dgx"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="keh-J6-dpm" firstAttribute="leading" secondItem="mv2-ao-fRr" secondAttribute="leading" id="MeG-96-E0V"/>
+                                        <constraint firstAttribute="bottom" secondItem="keh-J6-dpm" secondAttribute="bottom" id="d1z-ov-mMv"/>
+                                        <constraint firstItem="keh-J6-dpm" firstAttribute="top" secondItem="mv2-ao-fRr" secondAttribute="top" id="mRM-i8-OsS"/>
+                                        <constraint firstAttribute="trailing" secondItem="keh-J6-dpm" secondAttribute="trailing" id="ty9-4X-m4z"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="costLbl" destination="0Z0-6G-r8o" id="Cae-hx-mMq"/>
+                                    <outlet property="eachView" destination="PWF-YZ-Ugy" id="Seu-P7-wpb"/>
+                                    <outlet property="lblLeftIcon" destination="OQA-c8-KnP" id="I6r-qM-xMd"/>
+                                    <outlet property="lblRightIcon" destination="hfo-mS-ykD" id="tKc-i3-jRJ"/>
+                                    <outlet property="outsideView" destination="keh-J6-dpm" id="FEk-Em-cFv"/>
+                                    <outlet property="paymentLbl" destination="mNV-kg-f39" id="1Kr-cx-NFs"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -482,13 +630,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write the activity you want to add." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSj-zm-qbd">
-                                        <rect key="frame" x="8" y="40" width="358" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="8" y="40" width="358" height="24"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="15"/>
                                         <color key="textColor" red="0.44396105409999997" green="0.44402873520000002" blue="0.44394621249999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUr-F4-w6T">
-                                        <rect key="frame" x="8" y="77" width="358" height="206"/>
+                                        <rect key="frame" x="8" y="80.5" width="358" height="206"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ELF-SN-B5f">
                                                 <rect key="frame" x="10" y="7" width="338" height="192"/>
@@ -507,7 +655,7 @@
                                                                     </imageView>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Payer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xwe-nA-Ua8">
                                                                         <rect key="frame" x="42" y="0.0" width="296" height="38"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <connections>
                                                                             <action selector="firstTextFieldChanged:" destination="BVw-Kh-o2D" eventType="editingChanged" id="rDk-Ka-BkW"/>
@@ -523,7 +671,7 @@
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYj-6K-6yi">
                                                                         <rect key="frame" x="0.0" y="0.0" width="306" height="24"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="11"/>
                                                                         <color key="textColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -554,7 +702,7 @@
                                                                     </imageView>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Explanation" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nps-wN-3jx">
                                                                         <rect key="frame" x="42" y="0.0" width="296" height="38"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <connections>
                                                                             <action selector="seconTextFieldChanged:" destination="BVw-Kh-o2D" eventType="editingChanged" id="Jyw-qO-uE8"/>
@@ -570,7 +718,7 @@
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yE2-N1-Du7">
                                                                         <rect key="frame" x="0.0" y="0.0" width="306" height="24"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="11"/>
                                                                         <color key="textColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -601,7 +749,7 @@
                                                                     </imageView>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Yf-jf-hP0">
                                                                         <rect key="frame" x="42" y="0.0" width="296" height="38"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <connections>
                                                                             <action selector="thirdTextFieldChanged:" destination="BVw-Kh-o2D" eventType="editingChanged" id="eFf-43-IeX"/>
@@ -617,7 +765,7 @@
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N7-4x-1Mg">
                                                                         <rect key="frame" x="0.0" y="0.0" width="306" height="24"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="11"/>
                                                                         <color key="textColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -646,11 +794,12 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9K8-Hv-GMM">
-                                        <rect key="frame" x="8" y="340" width="358" height="34"/>
+                                        <rect key="frame" x="8" y="341" width="358" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MML-1t-7fi">
-                                                <rect key="frame" x="0.0" y="0.0" width="175" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="33"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="13"/>
                                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Add"/>
@@ -659,8 +808,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epc-P2-aJe">
-                                                <rect key="frame" x="183" y="0.0" width="175" height="34"/>
+                                                <rect key="frame" x="183" y="0.0" width="175" height="33"/>
                                                 <color key="backgroundColor" red="0.92475360630000003" green="0.36865374449999999" blue="0.37059289220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="13"/>
                                                 <color key="tintColor" red="0.92475360630000003" green="0.36865374449999999" blue="0.37059289220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Cancel"/>
@@ -740,13 +890,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write the activity you want to add." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wx9-b7-Nt5">
-                                        <rect key="frame" x="8" y="40" width="358" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="8" y="40" width="358" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
                                         <color key="textColor" red="0.44396105409999997" green="0.44402873520000002" blue="0.44394621249999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WrH-7S-tsr">
-                                        <rect key="frame" x="8" y="78" width="358" height="78"/>
+                                        <rect key="frame" x="8" y="80" width="358" height="78"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="ASE-3y-YdF">
                                                 <rect key="frame" x="10" y="8" width="338" height="64"/>
@@ -762,7 +912,7 @@
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Activity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n2V-Sa-awd">
                                                                 <rect key="frame" x="42" y="0.0" width="296" height="38"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <connections>
                                                                     <action selector="firstTextFieldEditing:" destination="RLl-no-9wa" eventType="editingChanged" id="25Q-T0-M7D"/>
@@ -778,7 +928,7 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svB-ha-G8L">
                                                                 <rect key="frame" x="0.0" y="0.0" width="306" height="24"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="11"/>
                                                                 <color key="textColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -806,11 +956,12 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Tb-rs-s6G">
-                                        <rect key="frame" x="8" y="258" width="358" height="34"/>
+                                        <rect key="frame" x="8" y="259" width="358" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kri-Mq-G3I">
-                                                <rect key="frame" x="0.0" y="0.0" width="165" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="165" height="33"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="13"/>
                                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Add"/>
@@ -819,8 +970,9 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSX-AD-rMr">
-                                                <rect key="frame" x="193" y="0.0" width="165" height="34"/>
+                                                <rect key="frame" x="193" y="0.0" width="165" height="33"/>
                                                 <color key="backgroundColor" red="0.92475360630000003" green="0.36865374449999999" blue="0.37059289220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="13"/>
                                                 <color key="tintColor" red="0.92475360630000003" green="0.36865374449999999" blue="0.37059289220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Cancel"/>
@@ -883,6 +1035,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
                             <color key="textColor" systemColor="systemPinkColor"/>
                         </textAttributes>
                     </navigationBar>
@@ -899,6 +1052,8 @@
     <resources>
         <image name="add" width="512" height="512"/>
         <image name="challenge" width="512" height="512"/>
+        <image name="circle.hexagongrid" catalog="system" width="128" height="112"/>
+        <image name="circles.hexagongrid" catalog="system" width="128" height="112"/>
         <image name="dollar" width="512" height="512"/>
         <image name="edit" width="512" height="512"/>
         <image name="pen" width="512" height="512"/>
@@ -910,6 +1065,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
