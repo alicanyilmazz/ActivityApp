@@ -21,7 +21,7 @@ class BaseTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        setUIFeatures()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -35,7 +35,11 @@ class BaseTableViewCell: UITableViewCell {
         cellLeftLbl.text = price
     }
     
-    func setUIFeatures(){
-       
+    func setUIFeatures(status : Bool){
+        if status{
+            cellLeftIcon.tintColor = .systemBlue
+        }else{
+            cellLeftIcon.tintColor = .systemPink
+        }
     }
 }
