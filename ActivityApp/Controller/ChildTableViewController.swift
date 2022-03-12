@@ -68,11 +68,12 @@ class ChildTableViewController: UITableViewController, CustomizableViewControlle
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ChildTableViewCell
         if let payment = payments?[indexPath.row] {
-            cell.textLabel?.text = "\(payment.payersName) - \(payment.balance) $"
+            //cell.textLabel?.text = "\(payment.payersName) - \(payment.balance) $"
+            cell.setAttributes(activityName: payment.payersName, price: "\(payment.balance)")
         }else{
-            cell.textLabel?.text = "Could not found any data."
+            cell.setAttributes(activityName: "No any payment", price: "0")
         }
         return cell
     }
