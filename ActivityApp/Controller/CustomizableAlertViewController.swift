@@ -78,15 +78,15 @@ extension CustomizableAlertViewController : UITextFieldDelegate{
     }
     
     @IBAction func addBtnClicked(_ sender: UIButton) {
-        guard let firstText = firstTextField.text else { return }
+        guard let firstText = firstTextField.text?.trimmingLeadingAndTrailingSpaces() else { return }
         isEmpty(firstText,warningLbl: firstTextFieldWarningLbl,warningImage: firstTextFieldWarningIcon)
-        guard let seconText = seconTextField.text else { return }
+        guard let seconText = seconTextField.text?.trimmingLeadingAndTrailingSpaces() else { return }
         isEmpty(seconText,warningLbl: seconTextFieldWarningLbl,warningImage: seconTextFieldWarningIcon)
-        guard let thirdText = thirdTextField.text else { return }
+        guard let thirdText = thirdTextField.text?.trimmingLeadingAndTrailingSpaces() else { return }
         isEmpty(thirdText , warningLbl: thirdTextFieldWarningLbl,warningImage: thirdTextFieldWarningIcon)
         let result = validationComponentBuilder.isEverythingValid(sectionName: SectionName.payment)
         if result{
-            delegate?.okButtonTapped(payersName: firstText, explanation: seconText, cost: thirdText)
+            delegate?.okButtonTapped(payersName: firstText.capitalizingFirstLetter(), explanation: seconText.capitalizingFirstLetter(), cost: thirdText)
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -160,5 +160,21 @@ extension CustomizableAlertViewController{
             warningLbl.textColor = .systemPink
             warningImage.image = UIImage(named: "cancel")
         }
+    }
+}
+
+extension String {
+    func trimmingLeadingAndTrailingSpaces(using characterSet: CharacterSet = .whitespacesAndNewlines) -> String {
+        return trimmingCharacters(in: characterSet)
+    }
+}
+
+extension String {
+    func capitalizingFirstLetter() -> String {
+      return prefix(1).uppercased() + self.lowercased().dropFirst()
+    }
+
+    mutating func capitalizeFirstLetter() {
+      self = self.capitalizingFirstLetter()
     }
 }
