@@ -530,9 +530,18 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="262" translatesAutoresizingMaskIntoConstraints="NO" id="mNV-kg-f39">
-                                                                    <rect key="frame" x="28" y="0.0" width="271" height="28"/>
+                                                                    <rect key="frame" x="28" y="0.0" width="100" height="28"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="100" id="ma4-T6-BPi"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
                                                                     <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="262" translatesAutoresizingMaskIntoConstraints="NO" id="AAp-zd-46F">
+                                                                    <rect key="frame" x="133" y="0.0" width="166" height="28"/>
+                                                                    <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
+                                                                    <color key="textColor" red="0.92549019610000005" green="0.36862745099999999" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Z0-6G-r8o">
@@ -582,6 +591,7 @@
                                 <connections>
                                     <outlet property="costLbl" destination="0Z0-6G-r8o" id="Cae-hx-mMq"/>
                                     <outlet property="eachView" destination="PWF-YZ-Ugy" id="Seu-P7-wpb"/>
+                                    <outlet property="explanationLbl" destination="AAp-zd-46F" id="wmV-b6-3xv"/>
                                     <outlet property="lblLeftIcon" destination="OQA-c8-KnP" id="I6r-qM-xMd"/>
                                     <outlet property="lblRightIcon" destination="hfo-mS-ykD" id="tKc-i3-jRJ"/>
                                     <outlet property="outsideView" destination="keh-J6-dpm" id="FEk-Em-cFv"/>

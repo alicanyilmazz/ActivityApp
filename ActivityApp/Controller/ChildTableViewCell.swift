@@ -14,6 +14,7 @@ class ChildTableViewCell: UITableViewCell {
     @IBOutlet weak var costLbl: UILabel!
     @IBOutlet weak var lblRightIcon: UIImageView!
     
+    @IBOutlet weak var explanationLbl: UILabel!
     @IBOutlet weak var eachView: UIView!
     @IBOutlet weak var outsideView: UIView!
     
@@ -28,8 +29,9 @@ class ChildTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setAttributes(activityName : String , price : String){
+    func setAttributes(activityName : String , price : String , explanation : String){
         paymentLbl.text = activityName
+        explanationLbl.text = explanation
         costLbl.text = price
     }
     
