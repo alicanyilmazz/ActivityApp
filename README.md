@@ -1,9 +1,9 @@
 ### ActivityApp
 
-# Realm for Local Data Persistance (Insert , Update , Delete , Get , Filter Operations)
-# Central Validation Manager Service
-# Custom Alert Controller 
-# Customn Snackbar
+#### Realm for Local Data Persistance (Insert , Update , Delete , Get , Filter Operations)
+#### Central Validation Manager Service
+#### Custom Alert Controller 
+#### Customn Snackbar
 
 ![Simulator_Screen_Recording_-_iPhone_13_Pro_Max_-_2022-03-13_at_21_43_31_AdobeCreativeCloudExpress](https://user-images.githubusercontent.com/49749125/158075457-e04c7c13-8564-4105-a0aa-7e3bbc33ed7f.gif)
 ![Simulator_Screen_Recording_-_iPhone_13_Pro_Max_-_2022-03-13_at_21_44_00_AdobeCreativeCloudExpress](https://user-images.githubusercontent.com/49749125/158075460-d29970c9-96c6-44bf-83f6-b0fca2d647e2.gif)
