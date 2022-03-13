@@ -14,19 +14,19 @@ final class ValidationComponentBuilder : ValidationComponentBuilderProtocol {
         UITextFieldComponent(componentType: ComponentType.activitySection.activityName,validations: [
            RegexValidatorManager([
                RegexModel(pattern: RegexValidationPatterns.alphabetic, error: .custom(message: "you must be only enter string.")),
-               RegexModel(pattern: RegexValidationPatterns.between3to15, error: .custom(message: "you can enter between 3 to 25."))
+               RegexModel(pattern: RegexValidationPatterns.between3to25, error: .custom(message: "you can enter between 3 to 25."))
            ])])
         ]),
     UISectionComponent(components: [
         UITextFieldComponent(componentType: ComponentType.paymentSection.payerName,validations: [
            RegexValidatorManager([
                RegexModel(pattern: RegexValidationPatterns.alphabetic, error: .custom(message: "you must be only enter string.")),
-               RegexModel(pattern: RegexValidationPatterns.between3to15, error: .custom(message: "you can enter between 3 to 25."))
+               RegexModel(pattern: RegexValidationPatterns.between3to25, error: .custom(message: "you can enter between 3 to 25."))
            ])]),
         UITextFieldComponent(componentType: ComponentType.paymentSection.explanation,validations: [
            RegexValidatorManager([
                RegexModel(pattern: RegexValidationPatterns.alphabetic, error: .custom(message: "you must be only enter string.")),
-               RegexModel(pattern: RegexValidationPatterns.between3to15, error: .custom(message: "you can enter between 3 to 25."))
+               RegexModel(pattern: RegexValidationPatterns.between3to25, error: .custom(message: "you can enter between 3 to 25."))
            ])]),
         UITextFieldComponent(componentType: ComponentType.paymentSection.cost,validations: [
            RegexValidatorManager([
@@ -38,12 +38,12 @@ final class ValidationComponentBuilder : ValidationComponentBuilderProtocol {
         UITextFieldComponent(componentType: ComponentType.editSection.payerName,validations: [
            RegexValidatorManager([
                RegexModel(pattern: RegexValidationPatterns.alphabetic, error: .custom(message: "you must be only enter string.")),
-               RegexModel(pattern: RegexValidationPatterns.between3to15, error: .custom(message: "you can enter between 3 to 25."))
+               RegexModel(pattern: RegexValidationPatterns.between3to25, error: .custom(message: "you can enter between 3 to 25."))
            ])]),
         UITextFieldComponent(componentType: ComponentType.editSection.explanation,validations: [
            RegexValidatorManager([
                RegexModel(pattern: RegexValidationPatterns.alphabetic, error: .custom(message: "you must be only enter string.")),
-               RegexModel(pattern: RegexValidationPatterns.between3to15, error: .custom(message: "you can enter between 3 to 25."))
+               RegexModel(pattern: RegexValidationPatterns.between3to25, error: .custom(message: "you can enter between 3 to 25."))
            ])]),
         UITextFieldComponent(componentType: ComponentType.editSection.cost,validations: [
            RegexValidatorManager([
