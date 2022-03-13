@@ -16,7 +16,7 @@ enum RegexValidationPatterns{
     static let email = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{3,64}"
     static let between3to20 = "^.{3,20}$"
     static let alphabetic = "[a-zA-Z]"
-    static let between3to15 = "^.{3,15}$"
+    static let between3to25 = "^.{3,25}$"
     static let onlyNumber = "^[0-9]+$"
     static let onlyDecimalNumber = "^-?[0-9][0-9,\\.]+$"
     static let between1to6 = "^.{1,6}$"
