@@ -71,9 +71,9 @@ class ChildTableViewController: UITableViewController, CustomizableViewControlle
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ChildTableViewCell
         if let payment = payments?[indexPath.row] {
             //cell.textLabel?.text = "\(payment.payersName) - \(payment.balance) $"
-            cell.setAttributes(activityName: payment.payersName, price: "\(payment.balance)")
+            cell.setAttributes(activityName: payment.payersName, price: "\(payment.balance)",explanation: payment.explanation)
         }else{
-            cell.setAttributes(activityName: "No any payment", price: "0")
+            cell.setAttributes(activityName: "No any payment", price: "0",explanation: "No explanation")
         }
         return cell
     }
