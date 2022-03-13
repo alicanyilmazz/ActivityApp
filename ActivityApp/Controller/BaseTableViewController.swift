@@ -164,7 +164,11 @@ class BaseTableViewController: UITableViewController{
             if let activite = self.activities?[indexPath.row] {
                 do {
                     try self.realm.write({
-                        activite.isCompleted = true
+                        if activite.isCompleted == false{
+                            activite.isCompleted = true
+                        }else{
+                            activite.isCompleted = false
+                        }
                     })
                 } catch {
                     print("opps balance error : \(error.localizedDescription)")
@@ -172,6 +176,18 @@ class BaseTableViewController: UITableViewController{
             }
             completionHandler(true)
             tableView.reloadData()
+            let frame = CGRect(x: 0, y: 0, width: (self.view.frame.size.width)/1.2, height: 60)
+            var message = ""
+            if let activite = self.activities?[indexPath.row]{
+                if activite.isCompleted == false{
+                    message = "Payments in this account have been cleared."
+                }else{
+                    message = "There are unpaid monies."
+                }
+            }
+            let viewModel = SnackbarViewModel(type: .info, text: message, image: UIImage(systemName: "bell"))
+            let snackbar = SnackbarView(viewModel: viewModel, frame: frame)
+            self.showSnacbar(snackBar: snackbar)
         }
         
         balanceAction.image = UIImage(systemName: "pencil")
@@ -233,5 +249,27 @@ extension BaseTableViewController : UISearchBarDelegate {
             }
         }
     }
+    
+    public func showSnacbar(snackBar : SnackbarView){
+        let width = view.frame.size.width/1.2
+        snackBar.frame = CGRect(x: (view.frame.size.width-width)/2, y: self.view.frame.size.height, width: width, height: 60)
+        view.addSubview(snackBar)
+        UIView.animate(withDuration: 0.5 , animations: {
+            snackBar.frame = CGRect(x: (self.view.frame.size.width - width)/2, y: (self.view.frame.size.height) - 190, width: width, height: 60)
+        },completion: { done in
+            if done{
+                DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
+                    UIView.animate(withDuration: 0.3 , animations: {
+                        snackBar.frame = CGRect(x: (self.view.frame.size.width-width)/2, y: self.view.frame.size.height, width: width, height: 60)
+                    },completion: { finished in
+                        if finished{
+                            snackBar.removeFromSuperview()
+                        }
+                    })
+                })
+            }
+        })
+    }
 }
+
 
