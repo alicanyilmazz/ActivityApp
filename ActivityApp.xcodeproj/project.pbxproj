@@ -28,6 +28,7 @@
 		5A75185E27D62853005372F3 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A75185D27D62853005372F3 /* Payment.swift */; };
 		5AE320B127DCBCA80045B66F /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE320B027DCBCA80045B66F /* BaseTableViewCell.swift */; };
 		5AE320B327DCBCC80045B66F /* ChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE320B227DCBCC80045B66F /* ChildTableViewCell.swift */; };
+		5AE320B627DD38B60045B66F /* Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE320B527DD38B60045B66F /* Snackbar.swift */; };
 		5AE774B427D8C87D00F0FB74 /* SubChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE774B327D8C87D00F0FB74 /* SubChildViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		5A75185D27D62853005372F3 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		5AE320B027DCBCA80045B66F /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		5AE320B227DCBCC80045B66F /* ChildTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTableViewCell.swift; sourceTree = "<group>"; };
+		5AE320B527DD38B60045B66F /* Snackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snackbar.swift; sourceTree = "<group>"; };
 		5AE774B327D8C87D00F0FB74 /* SubChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubChildViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 		5A4BE6E927D534AC009F3367 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5AE320B427DD38A90045B66F /* Snackbar */,
 				5A4BE6EA27D534B6009F3367 /* Validators */,
 			);
 			path = Core;
@@ -151,6 +154,14 @@
 				5A59614327D75B74005D6465 /* CustomizableAlertViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5AE320B427DD38A90045B66F /* Snackbar */ = {
+			isa = PBXGroup;
+			children = (
+				5AE320B527DD38B60045B66F /* Snackbar.swift */,
+			);
+			path = Snackbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE320B627DD38B60045B66F /* Snackbar.swift in Sources */,
 				5AE320B127DCBCA80045B66F /* BaseTableViewCell.swift in Sources */,
 				5A4BE6D127D53031009F3367 /* AppDelegate.swift in Sources */,
 				5A4BE6F627D53E2E009F3367 /* Managers.swift in Sources */,
