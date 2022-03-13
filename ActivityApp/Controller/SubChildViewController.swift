@@ -146,19 +146,19 @@ extension SubChildViewController : UITextFieldDelegate{
     }
    
     @IBAction func saveBtnClicked(_ sender: UIButton) {
-        guard let firstText = firstTextField.text else { return }
+        guard let firstText = firstTextField.text?.trimmingLeadingAndTrailingSpaces() else { return }
         isEmpty(firstText,warningLbl: firstTextFieldWarningLbl,warningImage: firstTextFieldRightImage)
-        guard let seconText = secondTextField.text else { return }
+        guard let seconText = secondTextField.text?.trimmingLeadingAndTrailingSpaces() else { return }
         isEmpty(seconText,warningLbl: secondTextFieldWarningLbl,warningImage: secondTextFieldRightImage)
-        guard let thirdText = thirdTextField.text else { return }
+        guard let thirdText = thirdTextField.text?.trimmingLeadingAndTrailingSpaces() else { return }
         isEmpty(thirdText , warningLbl: thirdTextFieldWarningLbl,warningImage: thirdTextFieldRightImage)
         let result = validationComponentBuilder.isEverythingValid(sectionName: SectionName.edit)
         if result{
             if let selectedPayment = selectedPayment{
                 do {
                     try realm.write({
-                        selectedPayment.payersName = firstText
-                        selectedPayment.explanation = seconText
+                        selectedPayment.payersName = firstText.capitalizingFirstLetter()
+                        selectedPayment.explanation = seconText.capitalizingFirstLetter()
                         selectedPayment.balance = Int(thirdText)!
                     })
                 } catch {
