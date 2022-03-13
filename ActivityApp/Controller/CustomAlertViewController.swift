@@ -96,11 +96,11 @@ extension CustomAlertViewController : UITextFieldDelegate{
 
 extension CustomAlertViewController{
     @IBAction func addBtnClicked(_ sender: UIButton) {
-        guard let text = firstTextField.text else { return }
+        guard let text = firstTextField.text?.trimmingLeadingAndTrailingSpaces() else { return }
         isEmpty(text)
         let result = validationComponentBuilder.isEverythingValid(sectionName: SectionName.activity)
         if result{
-            delegate?.okButtonTapped(data: text)
+            delegate?.okButtonTapped(data: text.capitalizingFirstLetter())
             self.dismiss(animated: true, completion: nil)
         }
     }
